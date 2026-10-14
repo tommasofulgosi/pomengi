@@ -1,0 +1,13 @@
+{
+  "itemGroup.pomengimod": "Scheda di Esempio",
+  "block.pomengimod.example_block": "Blocco di Esempio",
+  "item.pomengimod.example_item": "Oggetto di Esempio",
+
+  "pomengimod.configuration.title": "Configurazioni PomengiMod",
+  "pomengimod.configuration.section.pomengimod.common.toml": "Configurazioni PomengiMod",
+  "pomengimod.configuration.section.pomengimod.common.toml.title": "Configurazioni PomengiMod",
+  "pomengimod.configuration.items": "Lista Oggetti",
+  "pomengimod.configuration.logDirtBlock": "Registra Blocco di Terra",
+  "pomengimod.configuration.magicNumberIntroduction": "Testo Numero Magico",
+  "pomengimod.configuration.magicNumber": "Numero Magico"
+}

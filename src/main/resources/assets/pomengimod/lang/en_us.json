@@ -1,6 +1,8 @@
 {
   "itemGroup.pomengimod": "Example Mod Tab",
   "block.pomengimod.example_block": "Example Block",
+  "block.pomengimod.blocco_di_pomengite": "Pomengite Block",
+  "message.pomengimod.whisper": "...pomengi...",
   "item.pomengimod.example_item": "Example Item",
 
   "pomengimod.configuration.title": "PomengiMod Configs",

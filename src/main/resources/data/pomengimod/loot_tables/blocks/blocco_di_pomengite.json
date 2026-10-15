@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "pomengimod:blocco_di_pomengite"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "pomengimod:blocks/blocco_di_pomengite"
+}

@@ -21,6 +21,7 @@ public class ModCreativeTabs {
                     .icon(() -> ModItems.EXAMPLE_ITEM.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.EXAMPLE_ITEM.get());
+                        output.accept(ModItems.BLOCCO_DI_POMENGITE_ITEM.get());
                     }).build());
 
     private ModCreativeTabs() {

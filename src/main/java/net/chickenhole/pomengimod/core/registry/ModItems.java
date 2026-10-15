@@ -15,6 +15,9 @@ public class ModItems {
     public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem(
             "example_block", ModBlocks.EXAMPLE_BLOCK);
 
+    public static final DeferredItem<BlockItem> BLOCCO_DI_POMENGITE_ITEM = ITEMS.registerSimpleBlockItem(
+            "blocco_di_pomengite", ModBlocks.BLOCCO_DI_POMENGITE);
+
     public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(
             new FoodProperties.Builder().alwaysEdible().nutrition(1).saturationModifier(2f).build()));
 

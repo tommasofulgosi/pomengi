@@ -18,11 +18,13 @@ public class ModCreativeTabs {
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.pomengimod"))
                     .withTabsBefore(CreativeModeTabs.COMBAT)
-                    .icon(() -> ModItems.EXAMPLE_ITEM.get().getDefaultInstance())
+                    .icon(() -> ModItems.BLOCCO_DI_POMENGITE_ITEM.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.EXAMPLE_ITEM.get());
                         output.accept(ModItems.BLOCCO_DI_POMENGITE_ITEM.get());
                         output.accept(ModItems.SPADA_DI_MINERALE_POMENGIATO.get());
+                        output.accept(ModBlocks.BLOCCO_DI_POMENGITE_VARIANTE.get());
+                        output.accept(ModItems.POMENGI_MINERAL.get());
                     }).build());
 
     private ModCreativeTabs() {

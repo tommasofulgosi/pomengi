@@ -2,11 +2,13 @@
   "itemGroup.pomengimod": "Example Mod Tab",
   "block.pomengimod.example_block": "Example Block",
   "block.pomengimod.blocco_di_pomengite": "Pomengite Block",
+  "block.pomengimod.blocco_di_pomengite_variante": "Variant Pomengite Block",
   "message.pomengimod.whisper": "...pomengi...",
   "subtitles.pomengimod.pomengi": "Pomengi whispers",
   "item.pomengimod.example_item": "Example Item",
   "item.pomengimod.spada_di_minerale_pomengiato": "Pomengiated Mineral Sword",
   "effect.pomengimod.pomengite": "Pomengite",
+  "item.pomengimod.pomengi_mineral": "Mineral of Pomengi",
 
   "pomengimod.configuration.title": "PomengiMod Configs",
   "pomengimod.configuration.section.pomengimod.common.toml": "PomengiMod Configs",

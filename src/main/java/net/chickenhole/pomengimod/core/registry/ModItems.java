@@ -1,6 +1,7 @@
 package net.chickenhole.pomengimod.core.registry;
 
 import net.chickenhole.pomengimod.PomengiMod;
+import net.chickenhole.pomengimod.content.item.PomengiMineral;
 import net.chickenhole.pomengimod.content.item.PomengiteSwordItem;
 import net.chickenhole.pomengimod.core.ModTiers;
 
@@ -21,8 +22,17 @@ public class ModItems {
     public static final DeferredItem<BlockItem> BLOCCO_DI_POMENGITE_ITEM = ITEMS.registerSimpleBlockItem(
             "blocco_di_pomengite", ModBlocks.BLOCCO_DI_POMENGITE);
 
+    public static final DeferredItem<BlockItem> BLOCCO_DI_POMENGITE_VARIANTE_ITEM = ITEMS.registerSimpleBlockItem(
+            "blocco_di_pomengite_variante", ModBlocks.BLOCCO_DI_POMENGITE_VARIANTE);
+
     public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(
             new FoodProperties.Builder().alwaysEdible().nutrition(1).saturationModifier(2f).build()));
+
+
+    public static final DeferredItem<PomengiMineral> POMENGI_MINERAL = ITEMS.register(
+            "pomengi_mineral",
+            () -> new PomengiMineral(new Item.Properties())
+    );
 
     public static final DeferredItem<SwordItem> SPADA_DI_MINERALE_POMENGIATO = ITEMS.register(
             "spada_di_minerale_pomengiato",

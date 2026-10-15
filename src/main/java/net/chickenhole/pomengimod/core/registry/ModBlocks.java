@@ -3,6 +3,7 @@ package net.chickenhole.pomengimod.core.registry;
 import net.chickenhole.pomengimod.PomengiMod;
 import net.chickenhole.pomengimod.content.block.PomengiteBlock;
 
+import net.chickenhole.pomengimod.content.block.PomengiteBlock_Variante;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -23,6 +24,14 @@ public class ModBlocks {
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.DIRT)
                     .strength(0.5F)
+                    .sound(SoundType.GRAVEL));
+
+    public static final DeferredBlock<PomengiteBlock_Variante> BLOCCO_DI_POMENGITE_VARIANTE = BLOCKS.registerBlock(
+            "blocco_di_pomengite_variante",
+            PomengiteBlock_Variante::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DIRT)
+                    .strength(1.5F)
                     .sound(SoundType.GRAVEL));
 
     private ModBlocks() {

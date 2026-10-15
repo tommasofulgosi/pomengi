@@ -2,11 +2,13 @@
   "itemGroup.pomengimod": "Scheda di Esempio",
   "block.pomengimod.example_block": "Blocco di Esempio",
   "block.pomengimod.blocco_di_pomengite": "Blocco di Pomengite",
+  "block.pomengimod.blocco_di_pomengite_variante": "Blocco di Pomengite Variante",
   "message.pomengimod.whisper": "...pomengi...",
   "subtitles.pomengimod.pomengi": "Pomengi sussurra",
   "item.pomengimod.example_item": "Oggetto di Esempio",
   "item.pomengimod.spada_di_minerale_pomengiato": "Spada di Minerale Pomengiato",
   "effect.pomengimod.pomengite": "Pomengite",
+  "item.pomengimod.pomengi_mineral": "Minerale di Pomengi",
 
   "pomengimod.configuration.title": "Configurazioni PomengiMod",
   "pomengimod.configuration.section.pomengimod.common.toml": "Configurazioni PomengiMod",

@@ -1,6 +1,5 @@
 package net.chickenhole.pomengimod.core;
 
-import net.chickenhole.pomengimod.config.Config;
 import net.chickenhole.pomengimod.core.registry.ModItems;
 
 import net.minecraft.tags.BlockTags;
@@ -9,13 +8,23 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 
-// Materiale raro più forte della netherite. Tutti i valori leggono dal config,
-// così danno e durabilità si ritoccano senza toccare il codice (serve riavvio).
+// Materiale raro più forte della netherite.
+//
+// ATTENZIONE: questi valori NON possono stare nel config, perché il config
+// viene caricato DOPO le registrazioni. Per ritoccarli modifica qui sotto
+// e riavvia. Nel config restano solo i parametri degli effetti, che si
+// leggono a mondo avviato (anche senza riavvio).
 public class ModTiers {
+    public static final int DAMAGE_BASE = 4;
+    public static final int DAMAGE_BONUS = 5; // totale spada = base + bonus = 9 (netherite = 8)
+    public static final int DURABILITY = 2500;
+    public static final float ATTACK_SPEED = -2.4F;
+    public static final int ENCHANTABILITY = 18;
+
     public static final Tier POMENGITE = new Tier() {
         @Override
         public int getUses() {
-            return Config.POMENGITE_SWORD_DURABILITY.get();
+            return DURABILITY;
         }
 
         @Override
@@ -25,7 +34,7 @@ public class ModTiers {
 
         @Override
         public float getAttackDamageBonus() {
-            return Config.POMENGITE_SWORD_DAMAGE_BONUS.get();
+            return DAMAGE_BONUS;
         }
 
         @Override
@@ -35,7 +44,7 @@ public class ModTiers {
 
         @Override
         public int getEnchantmentValue() {
-            return Config.POMENGITE_SWORD_ENCHANTABILITY.get();
+            return ENCHANTABILITY;
         }
 
         @Override

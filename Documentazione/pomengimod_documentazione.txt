@@ -75,7 +75,8 @@ Aggiornato al: 15/10/2026
 6. SPADA DI MINERALE POMENGIATO (id: spada_di_minerale_pomengiato)
 ------------------------------------------------------------
 - Classi: content/item/PomengiteSwordItem.java, core/ModTiers.java (tier POMENGITE)
-- Statistiche (default, tutte nel config):
+- Statistiche (costanti in core/ModTiers.java: il config viene caricato
+  DOPO le registrazioni, quindi NON possono stare nel config):
     danno base 4 + bonus tier 5 = 9 totale (netherite = 8)
     velocita attacco -2.4 (come spade vanilla = 1.6)
     durabilita 2500 (netherite = 2031)
@@ -103,10 +104,10 @@ Aggiornato al: 15/10/2026
   magicNumber                     42        esempio template
   magicNumberIntroduction         "..."     esempio template
   items                           [...]     esempio template
-  pomengiteSwordDamage            4         richiede RIAVVIO
-  pomengiteSwordDamageBonus       5         richiede RIAVVIO
-  pomengiteSwordDurability        2500      richiede RIAVVIO
-  pomengiteSwordEnchantability    18        richiede RIAVVIO
+  pomengiteSwordDamage/DamageBonus/Durability/Enchantability: RIMOSSI dal
+  config (crash "Cannot get config value before config is loaded") ->
+  ora costanti DAMAGE_BASE/DAMAGE_BONUS/DURABILITY/ENCHANTABILITY/ATTACK_SPEED
+  in core/ModTiers.java (serve ricompilare + riavviare per cambiarli)
   pomengiteEffectDuration         3600      tick; 0 = disattiva il bundle
   pomengiteDotInterval            1200      tick; live anche a mondo avviato
   pomengiteDotDamage              1.0       mezzi-cuori; live anche a mondo avviato

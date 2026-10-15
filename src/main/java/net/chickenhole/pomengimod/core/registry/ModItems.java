@@ -1,7 +1,6 @@
 package net.chickenhole.pomengimod.core.registry;
 
 import net.chickenhole.pomengimod.PomengiMod;
-import net.chickenhole.pomengimod.config.Config;
 import net.chickenhole.pomengimod.content.item.PomengiteSwordItem;
 import net.chickenhole.pomengimod.core.ModTiers;
 
@@ -25,13 +24,12 @@ public class ModItems {
     public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(
             new FoodProperties.Builder().alwaysEdible().nutrition(1).saturationModifier(2f).build()));
 
-    // Valori letti dal config al momento della registrazione: servono riavvio se cambiati.
     public static final DeferredItem<SwordItem> SPADA_DI_MINERALE_POMENGIATO = ITEMS.register(
             "spada_di_minerale_pomengiato",
             () -> new PomengiteSwordItem(ModTiers.POMENGITE, new Item.Properties()
-                    .durability(Config.POMENGITE_SWORD_DURABILITY.get())
+                    .durability(ModTiers.DURABILITY)
                     .attributes(SwordItem.createAttributes(
-                            ModTiers.POMENGITE, Config.POMENGITE_SWORD_DAMAGE.get(), -2.4F))
+                            ModTiers.POMENGITE, ModTiers.DAMAGE_BASE, ModTiers.ATTACK_SPEED))
                     .fireResistant()));
 
     private ModItems() {

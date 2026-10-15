@@ -22,6 +22,7 @@ public class ModCreativeTabs {
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.EXAMPLE_ITEM.get());
                         output.accept(ModItems.BLOCCO_DI_POMENGITE_ITEM.get());
+                        output.accept(ModItems.SPADA_DI_MINERALE_POMENGIATO.get());
                     }).build());
 
     private ModCreativeTabs() {

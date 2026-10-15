@@ -1,0 +1,140 @@
+============================================================
+POMENGIMOD - DOCUMENTAZIONE DEI LAVORI
+Aggiornato al: 15/10/2026
+============================================================
+
+1. BASE DEL PROGETTO
+------------------------------------------------------------
+- Loader: NeoForge 21.1.259 per Minecraft 1.21.1 (Java 21)
+- Mod ID: pomengimod
+- Nome: PomengiMod
+- Group ID / package base: net.chickenhole.pomengimod
+- Repository: https://github.com/tommasofulgosi/pomengi.git (PRIVATA, branch master)
+- Il file neoforge.mods.toml sta in src/main/templates/META-INF/
+  (NON in resources: li i placeholder ${mod_id} non verrebbero espansi)
+
+2. STRUTTURA DEI PACKAGE (src/main/java/net/chickenhole/pomengimod/)
+------------------------------------------------------------
+- PomengiMod.java ................ entry point @Mod
+- config/Config.java ............. tutti i parametri (vedi punto 6)
+- core/ModTiers.java .............. materiale custom pomengite
+- core/registry/ ................. solo registrazioni:
+    ModBlocks.java (blocchi), ModItems.java (oggetti),
+    ModCreativeTabs.java (tab creativa), ModEntities.java (vuoto, pronto),
+    ModSounds.java (suoni), ModEffects.java (effetti)
+- content/block/ ................. classi dei blocchi (PomengiteBlock.java)
+- content/item/ .................. classi degli oggetti (PomengiteSwordItem.java)
+- content/effect/ ................ classi degli effetti (PomengiteEffect.java)
+- content/entity/ ................ (vuoto, futuro mob/boss)
+- client/ ........................ PomengiModClient + model/, renderer/, gui/
+- worldgen/ ...................... (vuoto, future strutture)
+- integration/ ................... (vuoto, future mod esterne)
+
+3. RISORSE (src/main/resources/)
+------------------------------------------------------------
+- assets/pomengimod/blockstates/ .. un json per blocco
+- assets/pomengimod/models/block/ . modelli cubici
+- assets/pomengimod/models/item/ .. modelli oggetto (blocchi: parent al modello blocco;
+                                   spada: parent minecraft:item/handheld)
+- assets/pomengimod/textures/block/ e .../item/ .../entity/ .../gui/
+- assets/pomengimod/sounds/ + sounds.json
+- assets/pomengimod/lang/ ........ en_us.json + it_it.json
+- data/pomengimod/loot_tables/blocks/ .../entities/ .../chests/
+- data/pomengimod/recipes/, advancements/, structure/*.nbt,
+  worldgen/{structure,structure_set,template_pool}/
+
+4. BLOCCO DI POMENGITE (id: blocco_di_pomengite)
+------------------------------------------------------------
+- Classe: content/block/PomengiteBlock.java
+- Proprieta: colore terra, durezza 0.5 (come terra), suono ghiaia
+- Modello: cube_bottom_top con 3 texture:
+    top .... textures/block/blocco_di_pomengite_top.png
+    side ... textures/block/blocco_di_pomengite_side.png (bordo viola)
+    bottom . textures/block/blocco_di_pomengite_bottom.png
+  (Le PNG non sono 16x16: funzionano lo stesso, scalate. Per pixel
+   perfetti riesportarle a 16x16.)
+- Loot table: droppa se stesso (data/.../loot_tables/blocks/)
+- Tab: tab della mod + tab Blocchi da costruzione vanilla
+- Nomi: "Pomengite Block" (en) / "Blocco di Pomengite" (it)
+- Comportamento (stepOn, solo server):
+    5% di probabilita a passo + cooldown 100 tick (5 s) per player
+    -> suono pomengimod:pomengi + messaggio "...pomengi..." in action bar.
+    Il cooldown evita sovrapposizioni stando fermi sopra.
+    Se l'ogg dura piu di 5 s, alzare WHISPER_COOLDOWN_TICKS in PomengiteBlock.
+
+5. SUONO POMENGI (event: pomengimod:pomengi)
+------------------------------------------------------------
+- File: assets/pomengimod/sounds/pomengi.ogg
+- sounds.json: categoria "blocks", stream true,
+  sottotitolo subtitles.pomengimod.pomengi
+  ("Pomengi whispers" / "Pomengi sussurra")
+- Registro: ModSounds.WHISPER_POMENGI (SoundEvent.createVariableRangeEvent)
+- Nota 1.21.1: i SoundEvents vanilla sono Holder -> serve .value()
+  in level.playSound(...).
+
+6. SPADA DI MINERALE POMENGIATO (id: spada_di_minerale_pomengiato)
+------------------------------------------------------------
+- Classi: content/item/PomengiteSwordItem.java, core/ModTiers.java (tier POMENGITE)
+- Statistiche (default, tutte nel config):
+    danno base 4 + bonus tier 5 = 9 totale (netherite = 8)
+    velocita attacco -2.4 (come spade vanilla = 1.6)
+    durabilita 2500 (netherite = 2031)
+    incantabilita 18, resistente al fuoco, mining tier netherite
+    riparazione: blocco di pomengite
+- Al colpo (solo server): applica per POMENGITE_EFFECT_DURATION tick
+    * effetto pomengite (custom, vedi sotto)
+    * unluck (sfortuna) vanilla
+    * weakness (debolezza) vanilla
+- Effetto pomengite (content/effect/PomengiteEffect.java, HARMFUL, viola):
+    danno nel tempo = POMENGITE_DOT_DAMAGE mezzi-cuori ogni
+    POMENGITE_DOT_INTERVAL tick (default: 1 danno ogni 1200 tick
+    = mezzo cuore al minuto). Dura POMENGITE_EFFECT_DURATION (default
+    3600 tick = 3 minuti -> ~1,5 cuori totali).
+- Nome: "Pomengiated Mineral Sword" (en) / "Spada di Minerale Pomengiato" (it)
+- Nome effetto: effect.pomengimod.pomengite = "Pomengite"
+- Modello: handheld -> textures/item/spada_di_minerale_pomengiato.png
+  (TEXTURE MANCANTE: da aggiungere, altrimenti icona viola-nera)
+- Tab: tab della mod. Nessuna ricetta (non esiste ancora il lingotto).
+
+7. CONFIG (file: config/pomengimod-common.toml, tipo COMMON)
+------------------------------------------------------------
+  Chiave                          Default   Note
+  logDirtBlock                    true      log di esempio
+  magicNumber                     42        esempio template
+  magicNumberIntroduction         "..."     esempio template
+  items                           [...]     esempio template
+  pomengiteSwordDamage            4         richiede RIAVVIO
+  pomengiteSwordDamageBonus       5         richiede RIAVVIO
+  pomengiteSwordDurability        2500      richiede RIAVVIO
+  pomengiteSwordEnchantability    18        richiede RIAVVIO
+  pomengiteEffectDuration         3600      tick; 0 = disattiva il bundle
+  pomengiteDotInterval            1200      tick; live anche a mondo avviato
+  pomengiteDotDamage              1.0       mezzi-cuori; live anche a mondo avviato
+  Sottotitoli config (it/en) gia presenti in lang.
+
+8. COMANDI UTILI
+------------------------------------------------------------
+- .\gradlew runClient ............ avvia Minecraft con la mod
+- .\gradlew build --offline ...... compila e pacchetta
+- /give @p pomengimod:blocco_di_pomengite
+- /give @p pomengimod:spada_di_minerale_pomengiato
+- /effect give @p pomengimod:pomengite 60
+
+9. STORIA GIT (branch master)
+------------------------------------------------------------
+- 4b7a31b Initial commit (template NeoForge)
+- 254ba47 pulizia worktree
+- ab82e6a allinea mod_group_id a net.chickenhole.pomengimod
+- e659efb blocco_di_pomengite con texture (3 lati)
+- d4c8c59 suono pomengi collegato al blocco
+- 3dc3dff cooldown anti-sovrapposizione sussurro
+- (da committare: spada + effetto pomengite + config esteso)
+
+10. COSE RIMASTE IN SOSPESO
+------------------------------------------------------------
+[ ] Texture spada_di_minerale_pomengiato.png (16x16 consigliati)
+[ ] Commit/push di spada + effetto + config
+[ ] Ricetta crafting spada (serve prima il lingotto/minerale)
+[ ] Icona effetto pomengite nell'HUD (ora quadrato viola generico)
+[ ] Cartelle vuote pronte: content/entity, worldgen, integration,
+    core/registry/ModEntities, ModSounds (altri), datagen

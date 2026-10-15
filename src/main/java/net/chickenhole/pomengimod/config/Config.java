@@ -25,6 +25,34 @@ public class Config {
             .comment("A list of items to log on common setup.")
             .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), () -> "", Config::validateItemName);
 
+    public static final ModConfigSpec.IntValue POMENGITE_SWORD_DAMAGE = BUILDER
+            .comment("Base damage of the pomengiated mineral sword (tier bonus is added on top)")
+            .defineInRange("pomengiteSwordDamage", 4, 0, 100);
+
+    public static final ModConfigSpec.IntValue POMENGITE_SWORD_DAMAGE_BONUS = BUILDER
+            .comment("Tier damage bonus of the pomengiated mineral sword")
+            .defineInRange("pomengiteSwordDamageBonus", 5, 0, 100);
+
+    public static final ModConfigSpec.IntValue POMENGITE_SWORD_DURABILITY = BUILDER
+            .comment("Durability of the pomengiated mineral sword")
+            .defineInRange("pomengiteSwordDurability", 2500, 1, 100000);
+
+    public static final ModConfigSpec.IntValue POMENGITE_SWORD_ENCHANTABILITY = BUILDER
+            .comment("Enchantability of the pomengiated mineral sword")
+            .defineInRange("pomengiteSwordEnchantability", 18, 0, 100);
+
+    public static final ModConfigSpec.IntValue POMENGITE_EFFECT_DURATION = BUILDER
+            .comment("Duration in ticks of the pomengite effect bundle (unluck, weakness, damage over time). 0 disables it.")
+            .defineInRange("pomengiteEffectDuration", 3600, 0, 72000);
+
+    public static final ModConfigSpec.IntValue POMENGITE_DOT_INTERVAL = BUILDER
+            .comment("Ticks between damage ticks of the pomengite effect (1200 ticks = half a heart per minute)")
+            .defineInRange("pomengiteDotInterval", 1200, 20, 72000);
+
+    public static final ModConfigSpec.DoubleValue POMENGITE_DOT_DAMAGE = BUILDER
+            .comment("Damage (half-hearts) dealt by each damage tick of the pomengite effect")
+            .defineInRange("pomengiteDotDamage", 1.0, 0.5, 100.0);
+
     public static final ModConfigSpec SPEC = BUILDER.build();
 
     private static boolean validateItemName(final Object obj) {

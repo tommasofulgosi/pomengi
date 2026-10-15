@@ -3,6 +3,7 @@ package net.chickenhole.pomengimod;
 import net.chickenhole.pomengimod.config.Config;
 import net.chickenhole.pomengimod.core.registry.ModBlocks;
 import net.chickenhole.pomengimod.core.registry.ModCreativeTabs;
+import net.chickenhole.pomengimod.core.registry.ModEffects;
 import net.chickenhole.pomengimod.core.registry.ModEntities;
 import net.chickenhole.pomengimod.core.registry.ModItems;
 import net.chickenhole.pomengimod.core.registry.ModSounds;
@@ -35,6 +36,7 @@ public class PomengiMod {
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
+        ModEffects.register(modEventBus);
         ModEntities.register(modEventBus);
         ModSounds.register(modEventBus);
 

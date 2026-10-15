@@ -1,1 +1,12 @@
-{}
+{
+  "pomengi": {
+    "category": "blocks",
+    "subtitle": "subtitles.pomengimod.pomengi",
+    "sounds": [
+      {
+        "name": "pomengimod:pomengi",
+        "stream": true
+      }
+    ]
+  }
+}

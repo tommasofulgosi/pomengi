@@ -1,8 +1,8 @@
 package net.chickenhole.pomengimod.content.block;
 
+import net.chickenhole.pomengimod.core.registry.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -23,7 +23,7 @@ public class PomengiteBlock extends Block {
         if (!level.isClientSide
                 && entity instanceof Player player
                 && level.random.nextFloat() < 0.05F) {
-            level.playSound(null, pos, SoundEvents.AMBIENT_CAVE.value(), SoundSource.BLOCKS, 0.6F, 0.8F);
+            level.playSound(null, pos, ModSounds.WHISPER_POMENGI.value(), SoundSource.BLOCKS, 0.8F, 1.0F);
             player.displayClientMessage(Component.translatable("message.pomengimod.whisper"), true);
         }
     }

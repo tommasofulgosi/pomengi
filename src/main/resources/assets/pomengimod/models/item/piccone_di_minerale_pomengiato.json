@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "pomengimod:item/piccone_di_minerale_pomengiato"
+  }
+}

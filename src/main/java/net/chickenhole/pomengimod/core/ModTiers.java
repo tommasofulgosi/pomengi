@@ -15,8 +15,10 @@ import net.minecraft.world.level.block.Block;
 // e riavvia. Nel config restano solo i parametri degli effetti, che si
 // leggono a mondo avviato (anche senza riavvio).
 public class ModTiers {
-    public static final int DAMAGE_BASE = 4;
-    public static final int DAMAGE_BONUS = 5; // totale spada = base + bonus = 9 (netherite = 8)
+    public static final int DAMAGE_BASE = 3;
+    public static final int DAMAGE_BONUS = 5; // totale spada = base + bonus = 8 (come netherite)
+    public static final int PICKAXE_DAMAGE_BASE = 2; // totale piccone = base + bonus = 7 (netherite = 6)
+    public static final float PICKAXE_SPEED = -2.8F; // come i picconi vanilla
     public static final int DURABILITY = 2500;
     public static final float ATTACK_SPEED = -2.4F;
     public static final int ENCHANTABILITY = 18;

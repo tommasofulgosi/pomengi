@@ -1,13 +1,15 @@
 package net.chickenhole.pomengimod.core.registry;
 
 import net.chickenhole.pomengimod.PomengiMod;
-import net.chickenhole.pomengimod.content.item.PomengiMineral;
+import net.chickenhole.pomengimod.content.item.MineralePomengiato;
 import net.chickenhole.pomengimod.content.item.PomengiteSwordItem;
+import net.chickenhole.pomengimod.content.item.PomengitePickaxeItem;
 import net.chickenhole.pomengimod.core.ModTiers;
 
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.SwordItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -29,9 +31,9 @@ public class ModItems {
             new FoodProperties.Builder().alwaysEdible().nutrition(1).saturationModifier(2f).build()));
 
 
-    public static final DeferredItem<PomengiMineral> POMENGI_MINERAL = ITEMS.register(
-            "pomengi_mineral",
-            () -> new PomengiMineral(new Item.Properties())
+    public static final DeferredItem<MineralePomengiato> MINERALE_POMENGIATO = ITEMS.register(
+            "minerale_pomengiato",
+            () -> new MineralePomengiato(new Item.Properties())
     );
 
     public static final DeferredItem<SwordItem> SPADA_DI_MINERALE_POMENGIATO = ITEMS.register(
@@ -40,6 +42,14 @@ public class ModItems {
                     .durability(ModTiers.DURABILITY)
                     .attributes(SwordItem.createAttributes(
                             ModTiers.POMENGITE, ModTiers.DAMAGE_BASE, ModTiers.ATTACK_SPEED))
+                    .fireResistant()));
+
+    public static final DeferredItem<PickaxeItem> PICCONE_DI_MINERALE_POMENGIATO = ITEMS.register(
+            "piccone_di_minerale_pomengiato",
+            () -> new PomengitePickaxeItem(ModTiers.POMENGITE, new Item.Properties()
+                    .durability(ModTiers.DURABILITY)
+                    .attributes(PickaxeItem.createAttributes(
+                            ModTiers.POMENGITE, ModTiers.PICKAXE_DAMAGE_BASE, ModTiers.PICKAXE_SPEED))
                     .fireResistant()));
 
     private ModItems() {

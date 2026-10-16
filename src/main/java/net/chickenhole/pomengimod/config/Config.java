@@ -34,8 +34,8 @@ public class Config {
             .defineInRange("pomengiteDotInterval", 1200, 20, 72000);
 
     public static final ModConfigSpec.DoubleValue POMENGITE_DOT_DAMAGE = BUILDER
-            .comment("Damage (half-hearts) dealt by each damage tick of the pomengite effect")
-            .defineInRange("pomengiteDotDamage", 1.0, 0.5, 100.0);
+            .comment("Damage multiplier on top of 1/8 of the victim's max hearts per damage tick")
+            .defineInRange("pomengiteDotDamage", 1.0, 0.0, 100.0);
 
     public static final ModConfigSpec SPEC = BUILDER.build();
 

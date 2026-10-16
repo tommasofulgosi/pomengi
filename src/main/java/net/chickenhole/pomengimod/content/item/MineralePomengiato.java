@@ -2,10 +2,8 @@ package net.chickenhole.pomengimod.content.item;
 
 import net.minecraft.world.item.Item;
 
-public class PomengiMineral extends Item {
-
-    public PomengiMineral(Properties properties) {
+public class MineralePomengiato extends Item {
+    public MineralePomengiato(Properties properties) {
         super(properties);
     }
-
 }

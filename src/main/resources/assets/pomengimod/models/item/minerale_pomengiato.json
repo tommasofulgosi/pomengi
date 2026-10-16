@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "pomengimod:item/pomengi_mineral"
+    "layer0": "pomengimod:item/minerale_pomengiato"
   }
 }

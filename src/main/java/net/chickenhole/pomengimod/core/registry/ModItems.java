@@ -1,7 +1,7 @@
 package net.chickenhole.pomengimod.core.registry;
 
 import net.chickenhole.pomengimod.PomengiMod;
-import net.chickenhole.pomengimod.content.item.PomengiMineral;
+import net.chickenhole.pomengimod.content.item.MineralePomengiato;
 import net.chickenhole.pomengimod.content.item.PomengiteSwordItem;
 import net.chickenhole.pomengimod.core.ModTiers;
 
@@ -29,9 +29,9 @@ public class ModItems {
             new FoodProperties.Builder().alwaysEdible().nutrition(1).saturationModifier(2f).build()));
 
 
-    public static final DeferredItem<PomengiMineral> POMENGI_MINERAL = ITEMS.register(
-            "pomengi_mineral",
-            () -> new PomengiMineral(new Item.Properties())
+    public static final DeferredItem<MineralePomengiato> MINERALE_POMENGIATO = ITEMS.register(
+            "minerale_pomengiato",
+            () -> new MineralePomengiato(new Item.Properties())
     );
 
     public static final DeferredItem<SwordItem> SPADA_DI_MINERALE_POMENGIATO = ITEMS.register(

@@ -89,10 +89,12 @@ Aggiornato al: 15/10/2026
     * unluck (sfortuna) vanilla
     * weakness (debolezza) vanilla
 - Effetto pomengite (content/effect/PomengiteEffect.java, HARMFUL, viola):
-    danno nel tempo = POMENGITE_DOT_DAMAGE mezzi-cuori ogni
-    POMENGITE_DOT_INTERVAL tick (default: 1 danno ogni 1200 tick
-    = mezzo cuore al minuto). Dura POMENGITE_EFFECT_DURATION (default
-    3600 tick = 3 minuti -> ~1,5 cuori totali).
+    danno nel tempo = 1/8 dei cuori massimi della vittima ogni
+    POMENGITE_DOT_INTERVAL tick (default 1200 = al minuto), moltiplicato
+    per POMENGITE_DOT_DAMAGE e per (amplificatore + 1). Esempio: player
+    (20 HP = 10 cuori) -> 1,25 HP al minuto; boss da 200 HP -> 12,5 HP
+    al minuto. Dura POMENGITE_EFFECT_DURATION (default
+    3600 tick = 3 minuti).
 - Nome: "Pomengiated Mineral Sword" (en) / "Spada di Minerale Pomengiato" (it)
 - Nome effetto: effect.pomengimod.pomengite = "Pomengite"
 - Modello: handheld -> textures/item/spada_di_minerale_pomengiato.png
@@ -135,7 +137,4 @@ Aggiornato al: 15/10/2026
 
 10. COSE RIMASTE IN SOSPESO
 ------------------------------------------------------------
-[ ] Texture spada_di_minerale_pomengiato.png (16x16 consigliati)
-[ ] Commit/push di spada + effetto + config
-[ ] Cartelle vuote pronte: content/entity, worldgen, integration,
-    core/registry/ModEntities, ModSounds (altri), datagen
+

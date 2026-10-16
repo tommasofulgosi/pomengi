@@ -16,8 +16,11 @@ public class PomengiteEffect extends MobEffect {
     @Override
     public boolean applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide) {
-            entity.hurt(entity.damageSources().magic(),
-                    Config.POMENGITE_DOT_DAMAGE.get().floatValue() * (amplifier + 1));
+            // 1/8 dei cuori massimi al minuto: cuori = vita max / 2, quindi danno = vita max / 16.
+            float damage = entity.getMaxHealth() / 16.0F
+                    * Config.POMENGITE_DOT_DAMAGE.get().floatValue()
+                    * (amplifier + 1);
+            entity.hurt(entity.damageSources().magic(), damage);
         }
         return true;
     }

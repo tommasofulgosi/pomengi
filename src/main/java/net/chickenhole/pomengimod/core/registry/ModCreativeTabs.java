@@ -24,7 +24,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.BLOCCO_DI_POMENGITE_ITEM.get());
                         output.accept(ModItems.SPADA_DI_MINERALE_POMENGIATO.get());
                         output.accept(ModBlocks.BLOCCO_DI_POMENGITE_VARIANTE.get());
-                        output.accept(ModItems.POMENGI_MINERAL.get());
+                        output.accept(ModItems.MINERALE_POMENGIATO.get());
                     }).build());
 
     private ModCreativeTabs() {

@@ -53,8 +53,7 @@ Aggiornato al: 15/10/2026
     top .... textures/block/blocco_di_pomengite_top.png
     side ... textures/block/blocco_di_pomengite_side.png (bordo viola)
     bottom . textures/block/blocco_di_pomengite_bottom.png
-  (Le PNG non sono 16x16: funzionano lo stesso, scalate. Per pixel
-   perfetti riesportarle a 16x16.)
+  (16x16 pixel-perfect dal 16/10/2026)
 - Loot table: droppa se stesso (data/.../loot_table/blocks/).
   Anche la variante ha la sua loot table.
 - Tab: tab della mod + tab Blocchi da costruzione vanilla

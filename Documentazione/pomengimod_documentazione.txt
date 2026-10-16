@@ -77,9 +77,8 @@ Aggiornato al: 15/10/2026
 6. SPADA DI MINERALE POMENGIATO (id: spada_di_minerale_pomengiato)
 ------------------------------------------------------------
 - Classi: content/item/PomengiteSwordItem.java, core/ModTiers.java (tier POMENGITE)
-- Statistiche (costanti in core/ModTiers.java: il config viene caricato
-  DOPO le registrazioni, quindi NON possono stare nel config):
-    danno base 4 + bonus tier 5 = 9 totale (netherite = 8)
+- Statistiche (costanti in ModTiers): danno base 3 + bonus 5 = 8 totale
+  (come netherite; l'effetto la rende comunque superiore)
     velocita attacco -2.4 (come spade vanilla = 1.6)
     durabilita 2500 (netherite = 2031)
     incantabilita 18, resistente al fuoco, mining tier netherite
@@ -98,8 +97,22 @@ Aggiornato al: 15/10/2026
 - Nome: "Pomengiated Mineral Sword" (en) / "Spada di Minerale Pomengiato" (it)
 - Nome effetto: effect.pomengimod.pomengite = "Pomengite"
 - Modello: handheld -> textures/item/spada_di_minerale_pomengiato.png
-  (TEXTURE MANCANTE: da aggiungere, altrimenti icona viola-nera)
-- Tab: tab della mod. Nessuna ricetta (non esiste ancora il lingotto).
+- Tab: tab della mod. Ricetta: data/pomengimod/recipe/pomengi_sword.json
+  (2 minerale_pomengiato + 1 stick).
+
+6b. PICCONE DI MINERALE POMENGIATO (id: piccone_di_minerale_pomengiato)
+------------------------------------------------------------
+- Classe: content/item/PomengitePickaxeItem.java (estende PickaxeItem)
+- Statistiche (costanti in ModTiers): danno base 2 + bonus 5 = 7 totale
+  (netherite = 6), velocita -2.8, durabilita 2500, resistente al fuoco
+- Abilita "risonanza fratturante": se colpisce un mob affetto da pomengite,
+  gliela rimuove e infligge subito il danno di 1 minuto di pomengite
+  (vita max / 16 x moltiplicatore) + suono sussurro acuto. Cooldown 1 minuto
+  (1200 tick) per player, VISIBILE: spazzata bianca sull'item + messaggio
+  "Risonanza fratturante!" all'attivazione e "in ricarica: Xs" se colpisci
+  un mob infetto durante il cooldown. Sfortuna/debolezza restano.
+- Nome: "Pomengiated Mineral Pickaxe" (en) / "Piccone di Minerale Pomengiato" (it)
+- Modello handheld + texture 16x16 presenti. Ricetta crafting: da fare.
 
 7. CONFIG (file: config/pomengimod-common.toml, tipo COMMON)
 ------------------------------------------------------------

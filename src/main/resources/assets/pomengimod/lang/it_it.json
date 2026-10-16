@@ -4,9 +4,12 @@
   "block.pomengimod.blocco_di_pomengite": "Blocco di Pomengite",
   "block.pomengimod.blocco_di_pomengite_variante": "Blocco di Pomengite Variante",
   "message.pomengimod.whisper": "...pomengi...",
+  "message.pomengimod.resonance": "Risonanza fratturante!",
+  "message.pomengimod.resonance_cooldown": "Risonanza in ricarica: %s s",
   "subtitles.pomengimod.pomengi": "Pomengi sussurra",
   "item.pomengimod.example_item": "Oggetto di Esempio",
   "item.pomengimod.spada_di_minerale_pomengiato": "Spada di Minerale Pomengiato",
+  "item.pomengimod.piccone_di_minerale_pomengiato": "Piccone di Minerale Pomengiato",
   "effect.pomengimod.pomengite": "Pomengite",
   "item.pomengimod.minerale_pomengiato": "Minerale di Pomengi",
 

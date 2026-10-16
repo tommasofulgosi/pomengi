@@ -3,11 +3,13 @@ package net.chickenhole.pomengimod.core.registry;
 import net.chickenhole.pomengimod.PomengiMod;
 import net.chickenhole.pomengimod.content.item.MineralePomengiato;
 import net.chickenhole.pomengimod.content.item.PomengiteSwordItem;
+import net.chickenhole.pomengimod.content.item.PomengitePickaxeItem;
 import net.chickenhole.pomengimod.core.ModTiers;
 
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.SwordItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -40,6 +42,14 @@ public class ModItems {
                     .durability(ModTiers.DURABILITY)
                     .attributes(SwordItem.createAttributes(
                             ModTiers.POMENGITE, ModTiers.DAMAGE_BASE, ModTiers.ATTACK_SPEED))
+                    .fireResistant()));
+
+    public static final DeferredItem<PickaxeItem> PICCONE_DI_MINERALE_POMENGIATO = ITEMS.register(
+            "piccone_di_minerale_pomengiato",
+            () -> new PomengitePickaxeItem(ModTiers.POMENGITE, new Item.Properties()
+                    .durability(ModTiers.DURABILITY)
+                    .attributes(PickaxeItem.createAttributes(
+                            ModTiers.POMENGITE, ModTiers.PICKAXE_DAMAGE_BASE, ModTiers.PICKAXE_SPEED))
                     .fireResistant()));
 
     private ModItems() {

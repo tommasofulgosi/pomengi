@@ -12,6 +12,8 @@
   "item.pomengimod.piccone_di_minerale_pomengiato": "Pomengiated Mineral Pickaxe",
   "effect.pomengimod.pomengite": "Pomengite",
   "item.pomengimod.minerale_pomengiato": "Mineral of Pomengi",
+  "item.pomengimod.pomengite_axe": "Pomengi Axe",
+  "block.pomengimod.pomengite_ore": "Pomengite Ore",
 
   "pomengimod.configuration.title": "PomengiMod Configs",
   "pomengimod.configuration.section.pomengimod.common.toml": "PomengiMod Configs",

@@ -26,6 +26,8 @@ public class ModCreativeTabs {
                         output.accept(ModItems.PICCONE_DI_MINERALE_POMENGIATO.get());
                         output.accept(ModBlocks.BLOCCO_DI_POMENGITE_VARIANTE.get());
                         output.accept(ModItems.MINERALE_POMENGIATO.get());
+                        output.accept(ModItems.POMENGITE_AXE.get());
+                        output.accept(ModBlocks.POMENGITE_ORE.get());
                     }).build());
 
     private ModCreativeTabs() {

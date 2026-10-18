@@ -4,6 +4,7 @@ import net.chickenhole.pomengimod.PomengiMod;
 import net.chickenhole.pomengimod.content.block.PomengiteBlock;
 
 import net.chickenhole.pomengimod.content.block.PomengiteBlock_Variante;
+import net.chickenhole.pomengimod.content.block.PomengiteOre;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -33,6 +34,17 @@ public class ModBlocks {
                     .mapColor(MapColor.DIRT)
                     .strength(1.5F)
                     .sound(SoundType.GRAVEL));
+
+
+
+    public static final DeferredBlock<PomengiteOre> POMENGITE_ORE = BLOCKS.register(
+            "pomengite_ore",
+            () -> new PomengiteOre(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .strength(4.0F, 4.0F) // Più duro del diamante (3.0F)
+                    .requiresCorrectToolForDrops() // Richiede lo strumento adatto
+                    .sound(SoundType.STONE))
+    );
 
     private ModBlocks() {
     }

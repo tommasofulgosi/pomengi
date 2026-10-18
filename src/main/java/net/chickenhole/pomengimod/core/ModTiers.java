@@ -19,6 +19,8 @@ public class ModTiers {
     public static final int DAMAGE_BONUS = 5; // totale spada = base + bonus = 8 (come netherite)
     public static final int PICKAXE_DAMAGE_BASE = 2; // totale piccone = base + bonus = 7 (netherite = 6)
     public static final float PICKAXE_SPEED = -2.8F; // come i picconi vanilla
+    public static final int AXE_DAMAGE = 12; // danno ascia pomengite
+    public static final float AXE_SPEED = -3.0F; // velocità classica ascia di Minecraft
     public static final int DURABILITY = 2500;
     public static final float ATTACK_SPEED = -2.4F;
     public static final int ENCHANTABILITY = 18;

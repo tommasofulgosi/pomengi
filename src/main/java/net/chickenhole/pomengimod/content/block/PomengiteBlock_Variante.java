@@ -46,4 +46,14 @@ public class PomengiteBlock_Variante extends Block {
             livingEntity.addEffect(new MobEffectInstance(ModEffects.POMENGITE, duration, 0));
         }
     }
+
+
+    @Override
+    public void playerDestroy(Level level, net.minecraft.world.entity.player.Player player, BlockPos pos, BlockState state, @org.jetbrains.annotations.Nullable net.minecraft.world.level.block.entity.BlockEntity blockEntity, net.minecraft.world.item.ItemStack tool) {
+        super.playerDestroy(level, player, pos, state, blockEntity, tool);
+        if (!level.isClientSide && !player.isCreative()) {
+            popResource(level, pos, new net.minecraft.world.item.ItemStack(this));
+        }
+    }
+
 }

@@ -2,11 +2,13 @@ package net.chickenhole.pomengimod.core.registry;
 
 import net.chickenhole.pomengimod.PomengiMod;
 import net.chickenhole.pomengimod.content.item.MineralePomengiato;
+import net.chickenhole.pomengimod.content.item.PomengiteAxeItem;
 import net.chickenhole.pomengimod.content.item.PomengiteSwordItem;
 import net.chickenhole.pomengimod.content.item.PomengitePickaxeItem;
 import net.chickenhole.pomengimod.core.ModTiers;
 
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
@@ -36,6 +38,14 @@ public class ModItems {
             () -> new MineralePomengiato(new Item.Properties())
     );
 
+    public static final DeferredItem<PomengiteAxeItem> POMENGITE_AXE = ITEMS.register(
+            "pomengite_axe",
+            () -> new PomengiteAxeItem(new Item.Properties()
+                    .durability(ModTiers.DURABILITY)
+                    .attributes(AxeItem.createAttributes(
+                            ModTiers.POMENGITE, ModTiers.AXE_DAMAGE, ModTiers.AXE_SPEED)))
+    );
+
     public static final DeferredItem<SwordItem> SPADA_DI_MINERALE_POMENGIATO = ITEMS.register(
             "spada_di_minerale_pomengiato",
             () -> new PomengiteSwordItem(ModTiers.POMENGITE, new Item.Properties()
@@ -51,6 +61,13 @@ public class ModItems {
                     .attributes(PickaxeItem.createAttributes(
                             ModTiers.POMENGITE, ModTiers.PICKAXE_DAMAGE_BASE, ModTiers.PICKAXE_SPEED))
                     .fireResistant()));
+
+
+
+    public static final DeferredItem<BlockItem> POMENGITE_ORE_ITEM = ITEMS.registerSimpleBlockItem(
+            "pomengite_ore",
+            ModBlocks.POMENGITE_ORE
+    );
 
     private ModItems() {
     }

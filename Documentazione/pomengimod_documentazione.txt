@@ -1,6 +1,6 @@
 ============================================================
 POMENGIMOD - DOCUMENTAZIONE DEI LAVORI
-Aggiornato al: 16/10/2026
+Aggiornato al: 17/10/2026
 ============================================================
 
 1. BASE DEL PROGETTO
@@ -12,6 +12,7 @@ Aggiornato al: 16/10/2026
 - Repository: https://github.com/tommasofulgosi/pomengi.git (PRIVATA, branch attivo: mouhamed-dev)
 - Il file neoforge.mods.toml sta in src/main/templates/META-INF/
 
+
 2. STRUTTURA DEI PACKAGE (src/main/java/net/chickenhole/pomengimod/)
 ------------------------------------------------------------
 - PomengiMod.java ................ entry point @Mod
@@ -19,85 +20,68 @@ Aggiornato al: 16/10/2026
 - core/ModTiers.java .............. materiale custom pomengite
 - core/registry/ ................. solo registrazioni:
     ModBlocks.java (blocchi), ModItems.java (oggetti),
-    ModCreativeTabs.java (tab creativa + icona custom), ModEntities.java (vuoto, pronto),
+    ModCreativeTabs.java (tab creativa + icona custom), ModEntities.java,
     ModSounds.java (suoni), ModEffects.java (effetti)
-- content/block/ ................. classi dei blocchi (PomengiteBlock.java, PomengiteBlock_Variante.java)
-- content/item/ .................. classi degli oggetti (PomengiteSwordItem.java, PomengiMineral.java)
+- content/block/ ................. classi dei blocchi (PomengiteBlock.java, PomengiteBlock_Variante.java, PomengiteOre.java)
+- content/item/ .................. classi degli oggetti (PomengiteSwordItem.java, PomengiMineral.java, ecc.)
 - content/effect/ ................ classi degli effetti (PomengiteEffect.java)
-- content/entity/ ................ (vuoto, futuro mob/boss)
+- content/entity/ ................. (vuoto, futuro mob/boss)
 - client/ ........................ PomengiModClient + model/, renderer/, gui/
 - worldgen/ ...................... (vuoto, future strutture)
 - integration/ ................... (vuoto, future mod esterne)
+
 
 3. RISORSE (src/main/resources/)
 ------------------------------------------------------------
 - assets/pomengimod/blockstates/ .. un json per blocco
 - assets/pomengimod/models/block/ . modelli cubici
-- assets/pomengimod/models/item/ .. modelli oggetto (blocchi: parent al modello blocco;
-                                   spada: parent minecraft:item/handheld)
-- assets/pomengimod/textures/block/ e .../item/ .../mob_effect/ .../entity/ .../gui/
+- assets/pomengimod/models/item/ .. modelli oggetto
+- assets/pomengimod/textures/block/ e .../item/ .../mob_effect/
 - assets/pomengimod/sounds/ + sounds.json
 - assets/pomengimod/lang/ ........ en_us.json + it_it.json
 - data/pomengimod/loot_tables/blocks/ .../entities/ .../chests/
-- data/pomengimod/recipe/ ....... ricette di crafting (NOTA: la cartella DEVE chiamarsi recipe al singolare)
-- data/pomengimod/advancements/, structure/*.nbt, worldgen/{structure,structure_set,template_pool}/
+- data/pomengimod/recipe/ ....... ricette di crafting (cartella `recipe` al singolare)
+- data/minecraft/tags/block/mineable/ .. shovel.json, pickaxe.json
 
-4. BLOCCHI DI POMENGITE
+
+4. BLOCCHI DELLA MOD
 ------------------------------------------------------------
 A) Blocco di Pomengite (id: blocco_di_pomengite)
-   - Classe: content/block/PomengiteBlock.java
-   - Modello: cube_bottom_top con 3 texture (top, side, bottom)
-   - Comportamento: 5% probabilita a passo -> suono + messaggio in action bar.
+- Classe: content/block/PomengiteBlock.java
+- Comportamento: 5% probabilita a passo -> suono + messaggio in action bar.
 
 B) Blocco di Pomengite Variante (id: blocco_di_pomengite_variante)
-   - Classe: content/block/PomengiteBlock_Variante.java
-   - Modello: cube_all (tutte le facce uguali)
-   - Texture: textures/block/blocco_di_pomengite_variante.png (16x16)
-   - Registrazione: ModBlocks + ModItems (BlockItem registrato)
-   - Nomi: "Variant Pomengite Block" (en) / "Blocco di Pomengite Variante" (it)
+- Classe: content/block/PomengiteBlock_Variante.java
 
-5. MINERALE DI POMENGI (id: pomengi_mineral)
+C) Minerale di Pomengite (id: pomengite_ore)
+- Classe: content/block/PomengiteOre.java
+- Proprietà: Durezza 4.0F / Resistenza 4.0F (più duro del diamante)
+- Logica di Drop: Override in Java (`playerDestroy`) per rilasciare l'item del minerale e punti esperienza (3-7 XP) SOLO se estratto con piccone di Diamante, Netherite o il piccone di Pomengite.
+
+
+5. RICETTE DI CRAFTING (data/pomengimod/recipe/)
 ------------------------------------------------------------
-- Classe: content/item/PomengiMineral.java (estende Item standard)
-- Texture: textures/item/pomengi_mineral.png (16x16)
-- Registrazione: ModItems.POMENGI_MINERAL
-- Modello: minecraft:item/generated -> layer0: pomengimod:item/pomengi_mineral
-- Nomi: "Pomengi Mineral" (en) / "Minerale di Pomengi" (it)
-- Utilizzo: Oggetto grezzo/gemma impiegato come ingrediente nelle ricette di crafting.
+- Spada di Minerale Pomengiato (pomengi_sword.json)
+- Ascia di Pomengi (aggiunta ricetta di crafting dedicata)
 
-6. EFFETTI DI STATO E TAB CREATIVA
-------------------------------------------------------------
-- Icona MobEffect: textures/mob_effect/pomengite.png
-  (Associata automaticamente all'effetto Pomengite quando attivo nel gioco o inventario)
-- ModCreativeTabs: configurata con icona custom (ItemStack del Blocco di Pomengite)
-  Mostra tutti gli item e i blocchi del progetto nella scheda dedicata.
 
-7. RICETTE DI CRAFTING (data/pomengimod/recipe/)
-------------------------------------------------------------
-- Spada di Minerale Pomengiato (id file: pomengi_sword.json):
-  - Tipo: minecraft:crafting_shaped
-  - Pattern: 2x Minerale di Pomengi ("X") in colonna + 1x Bastoncino ("#") in basso
-  - Risultato: 1x pomengimod:spada_di_minerale_pomengiato
-  - NOTA ARCHITETTURALE: La cartella delle ricette in NeoForge 1.21.1 si chiama rigorosamente `recipe` (senza "s").
-
-8. COMANDI UTILI
+6. COMANDI UTILI
 ------------------------------------------------------------
 - .\gradlew runClient ............ avvia Minecraft con la mod
-- F3 + T (in gioco) .............. ricarica al volo ricette e asset JSON senza riavviare
+- F3 + T (in gioco) .............. ricarica al volo ricette e asset JSON
+- /give @p pomengimod:pomengite_ore
 - /give @p pomengimod:pomengi_mineral
-- /give @p pomengimod:blocco_di_pomengite_variante
-- /give @p pomengimod:spada_di_minerale_pomengiato
 
-9. COSE COMPLETATE OGGI
+
+7. COSE COMPLETATE OGGI (17/10/2026)
 ------------------------------------------------------------
-[x] Creato e integrato il Blocco di Pomengite Variante
-[x] Creato e registrato il Minerale di Pomengi (Item)
-[x] Impostata l'icona custom per l'effetto di stato in textures/mob_effect/
-[x] Assegnata l'icona alla Tab Creativa della mod
-[x] Creata e verificata la ricetta di crafting per la Spada di Pomengi
+[x] Implementato il crafting dell'ascia della mod
+[x] Creato e registrato il nuovo blocco `PomengiteOre` (Minerale di Pomengite) con proprietà avanzate di durezza
+[x] Configurato il sistema di drop in Java (`playerDestroy`) per garantire il rilascio degli oggetti in modo stabile
+[x] Aggiunto il filtro sui picconi avanzati (Diamante, Netherite, Pomengite) per il mining del minerale
+[x] Implementato il rilascio di punti esperienza (XP) alla rottura del minerale
+[x] Aggiornati i file di lingua (it_it / en_us), modelli, blockstate e inserimento nella Tab Creativa
 
-10. COSE RIMASTE IN SOSPESO
+8. COSE RIMASTE IN SOSPESO
 ------------------------------------------------------------
 [ ] Generazione naturale dei minerali nel mondo (worldgen per Pomengi Ore)
-[ ] Integrazione Loot Tables per far droppare il Minerale al Blocco grezzo
-[ ] Review e Merge del branch `mouhamed-dev` su `master` insieme a Tommaso

@@ -4,6 +4,7 @@ import net.chickenhole.pomengimod.PomengiMod;
 import net.chickenhole.pomengimod.content.block.PomengiteBlock;
 
 import net.chickenhole.pomengimod.content.block.PomengiteBlock_Variante;
+import net.chickenhole.pomengimod.content.block.PomengiteMineralBlock;
 import net.chickenhole.pomengimod.content.block.PomengiteOre;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -45,6 +46,17 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops() // Richiede lo strumento adatto
                     .sound(SoundType.STONE))
     );
+
+    public static final DeferredBlock<PomengiteMineralBlock> POMENGITE_MINERAL_BLOCK = BLOCKS.register(
+            "pomengite_mineral_block",
+            () -> new PomengiteMineralBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.METAL)
+                    .strength(3.0F, 6.0F) // Molto resistente come un blocco metallico/diamante
+                    .lightLevel(state -> 8)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL))
+    );
+
 
     private ModBlocks() {
     }

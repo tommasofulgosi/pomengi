@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "pomengimod:pomengite_mineral_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "pomengimod:minerale_pomengiato"
+  }
+}

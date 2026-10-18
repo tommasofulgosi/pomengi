@@ -69,6 +69,11 @@ public class ModItems {
             ModBlocks.POMENGITE_ORE
     );
 
+    public static final DeferredItem<BlockItem> POMENGITE_MINERAL_BLOCK_ITEM = ITEMS.registerSimpleBlockItem(
+            "pomengite_mineral_block",
+            ModBlocks.POMENGITE_MINERAL_BLOCK
+    );
+
     private ModItems() {
     }
 

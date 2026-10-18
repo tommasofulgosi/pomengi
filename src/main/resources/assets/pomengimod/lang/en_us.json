@@ -14,6 +14,7 @@
   "item.pomengimod.minerale_pomengiato": "Mineral of Pomengi",
   "item.pomengimod.pomengite_axe": "Pomengi Axe",
   "block.pomengimod.pomengite_ore": "Pomengite Ore",
+  "block.pomengimod.pomengite_mineral_block": "Pomengi Mineral Block",
 
   "pomengimod.configuration.title": "PomengiMod Configs",
   "pomengimod.configuration.section.pomengimod.common.toml": "PomengiMod Configs",

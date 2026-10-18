@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "pomengimod:pomengite_ore"
+    "pomengimod:pomengite_ore",
+    "pomengimod:pomengite_mineral_block"
   ]
 }

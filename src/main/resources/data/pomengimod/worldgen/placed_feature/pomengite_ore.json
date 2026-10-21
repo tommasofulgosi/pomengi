@@ -11,9 +11,9 @@
     {
       "type": "minecraft:height_range",
       "height": {
-        "type": "minecraft:absolute",
-        "min_inclusive": -64,
-        "max_inclusive": 24
+        "type": "minecraft:uniform",
+        "above_bottom": 0,
+        "below_top": 200
       }
     }
   ]

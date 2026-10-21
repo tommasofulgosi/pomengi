@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "pomengimod:block/stone_pomengiata"
+  }
+}

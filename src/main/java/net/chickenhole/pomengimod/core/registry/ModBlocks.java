@@ -28,6 +28,12 @@ public class ModBlocks {
                     .strength(0.5F)
                     .sound(SoundType.GRAVEL));
 
+    public static final DeferredBlock<Block> STONE_POMENGIADED = BLOCKS.registerSimpleBlock(
+            "stone_pomengiato", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.5F));
+
+    public static final DeferredBlock<Block> SMOOTH_STONE_POMENGIADED = BLOCKS.registerSimpleBlock(
+            "smooth_pomengiato", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.5F));
+
     public static final DeferredBlock<PomengiteBlock_Variante> BLOCCO_DI_POMENGITE_VARIANTE = BLOCKS.registerBlock(
             "blocco_di_pomengite_variante",
             PomengiteBlock_Variante::new,

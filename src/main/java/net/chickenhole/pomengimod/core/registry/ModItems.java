@@ -74,6 +74,12 @@ public class ModItems {
             ModBlocks.POMENGITE_MINERAL_BLOCK
     );
 
+    public static final DeferredItem<BlockItem> STONE_POMENGIADED_ITEM = ITEMS.registerSimpleBlockItem(
+            "stone_pomengiato", ModBlocks.STONE_POMENGIADED);
+
+    public static final DeferredItem<BlockItem> SMOOTH_STONE_POMENGIADED_ITEM = ITEMS.registerSimpleBlockItem(
+            "smooth_pomengiato", ModBlocks.SMOOTH_STONE_POMENGIADED);
+
     private ModItems() {
     }
 

@@ -1,13 +1,15 @@
 {
   "type": "minecraft:ore",
   "config": {
-    "target": {
-      "predicate_type": "minecraft:match_blocks",
-      "blocks": [
-        "minecraft:stone",
-        "minecraft:deepslate"
-      ]
-    },
+    "targets": [
+      {
+        "predicate_type": "minecraft:match_blocks",
+        "blocks": [
+          "minecraft:stone",
+          "minecraft:deepslate"
+        ]
+      }
+    ],
     "state": {
       "Name": "pomengimod:pomengite_ore"
     },

@@ -39,7 +39,7 @@ Aggiornato al: 17/10/2026
 - assets/pomengimod/textures/block/ e .../item/ .../mob_effect/
 - assets/pomengimod/sounds/ + sounds.json
 - assets/pomengimod/lang/ ........ en_us.json + it_it.json
-- data/pomengimod/loot_tables/blocks/ .../entities/ .../chests/
+- data/pomengimod/loot_table/blocks/ .../entities/ .../chests/  (1.21: cartella `loot_table` al singolare)
 - data/pomengimod/recipe/ ....... ricette di crafting (cartella `recipe` al singolare)
 - data/minecraft/tags/block/mineable/ .. shovel.json, pickaxe.json
 
@@ -57,6 +57,14 @@ C) Minerale di Pomengite (id: pomengite_ore)
 - Classe: content/block/PomengiteOre.java
 - Proprietà: Durezza 4.0F / Resistenza 4.0F (più duro del diamante)
 - Logica di Drop: Override in Java (`playerDestroy`) per rilasciare l'item del minerale e punti esperienza (3-7 XP) SOLO se estratto con piccone di Diamante, Netherite o il piccone di Pomengite.
+
+D) Pietra Pomengiata / Pietra Pomengiata Levigata (id: cobblestone_pomengiata, smooth_pomengiato)
+- Texture: textures/block/cobblestone_pomengiata.png + smooth_pomengiata.png (16x16)
+- Modello: minecraft:block/cube_all con texture unica su tutte le facce
+- Proprietà: durezza 1.5, come pietra normale, nessun effetto speciale
+- Loot table: droppa se stesso
+- Nomi: "Pomengiato Cobblestone" / "Cobblestone Pomengiato" e "Smooth Pomengiato" / "Pietra Pomengiata Levigata"
+- Tab: tab della mod + tab Blocchi da costruzione vanilla
 
 
 5. RICETTE DI CRAFTING (data/pomengimod/recipe/)

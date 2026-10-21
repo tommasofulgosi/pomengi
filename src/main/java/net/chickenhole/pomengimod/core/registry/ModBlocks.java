@@ -28,8 +28,8 @@ public class ModBlocks {
                     .strength(0.5F)
                     .sound(SoundType.GRAVEL));
 
-    public static final DeferredBlock<Block> STONE_POMENGIADED = BLOCKS.registerSimpleBlock(
-            "stone_pomengiato", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.5F));
+    public static final DeferredBlock<Block> COBBLESTONE_POMENGIADED = BLOCKS.registerSimpleBlock(
+            "cobblestone_pomengiata", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.5F));
 
     public static final DeferredBlock<Block> SMOOTH_STONE_POMENGIADED = BLOCKS.registerSimpleBlock(
             "smooth_pomengiato", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.5F));

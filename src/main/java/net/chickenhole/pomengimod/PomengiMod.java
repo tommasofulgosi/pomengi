@@ -60,8 +60,9 @@ public class PomengiMod {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == net.minecraft.world.item.CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModItems.EXAMPLE_BLOCK_ITEM.get());
             event.accept(ModItems.BLOCCO_DI_POMENGITE_ITEM.get());
+            event.accept(ModItems.COBBLESTONE_POMENGIADED_ITEM.get());
+            event.accept(ModItems.SMOOTH_STONE_POMENGIADED_ITEM.get());
         }
     }
 

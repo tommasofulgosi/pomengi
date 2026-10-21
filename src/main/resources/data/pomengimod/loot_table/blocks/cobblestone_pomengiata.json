@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "pomengimod:stone_pomengiato"
+          "name": "pomengimod:cobblestone_pomengiata"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "pomengimod:blocks/stone_pomengiato"
+  "random_sequence": "pomengimod:blocks/cobblestone_pomengiata"
 }

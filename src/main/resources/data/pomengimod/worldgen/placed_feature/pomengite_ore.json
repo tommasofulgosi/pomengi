@@ -11,8 +11,15 @@
     {
       "type": "minecraft:height_range",
       "height": {
-        "above_bottom": 0,
-        "below_top": 200
+        "type": "minecraft:uniform",
+        "above_bottom": {
+          "type": "minecraft:constant",
+          "value": 0
+        },
+        "below_top": {
+          "type": "minecraft:constant",
+          "value": 200
+        }
       }
     }
   ]

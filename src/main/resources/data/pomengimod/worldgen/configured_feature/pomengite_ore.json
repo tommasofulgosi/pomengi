@@ -9,7 +9,7 @@
           "Name": "pomengimod:pomengite_ore"
         },
         "target": {
-          "type": "minecraft:match_blocks",
+          "predicate_type": "minecraft:match_blocks",
           "blocks": ["minecraft:stone", "minecraft:deepslate"]
         }
       }

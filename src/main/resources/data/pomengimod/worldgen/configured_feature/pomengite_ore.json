@@ -1,7 +1,7 @@
 {
   "type": "minecraft:ore",
   "config": {
-    "discard_chance_on_air_exposure": 0,
+    "discard_chance_on_air_exposure": 0.0,
     "size": 3,
     "targets": [
       {
@@ -9,8 +9,11 @@
           "Name": "pomengimod:pomengite_ore"
         },
         "target": {
-          "predicate_type": "minecraft:match_blocks",
-          "blocks": ["minecraft:stone", "minecraft:deepslate"]
+          "type": "minecraft:match_blocks",
+          "blocks": [
+            "minecraft:stone",
+            "minecraft:deepslate"
+          ]
         }
       }
     ]
